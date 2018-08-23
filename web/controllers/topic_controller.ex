@@ -11,6 +11,12 @@ defmodule Discuss.TopicController do
 
   # Note that params maps are string: value
   def create(conn, %{"topic" => topic}) do
+    changeset = Topic.changeset(%Topic{}, topic)
+
+    case Repo.insert(changeset) do
+      {:ok, topic} -> IO.inspect(topic)
+      {:error, changeset} -> IO.inspect(changeset)
+    end
 
   end
 end
