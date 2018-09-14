@@ -3,7 +3,7 @@ defmodule Discuss.Topic do
 
   schema "topics" do
     field :title, :string
-    field :user_id
+    # field :user_id
     belongs_to :user, Discuss.User
   end
 
